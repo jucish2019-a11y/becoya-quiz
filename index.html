@@ -217,7 +217,25 @@
     {cat:'Wordplay', q:'What five-letter word becomes shorter when you add two letters to it?', a:'Short (add "er" to get "shorter")'},
     {cat:'Science', q:'What organ in the human body produces insulin?', a:'The pancreas'},
     {cat:'General', q:'What is the tallest species of penguin?', a:'Emperor penguin'},
-    {cat:'Sports', q:'How many rings are on the Olympic flag?', a:'Five'}
+    {cat:'Sports', q:'How many rings are on the Olympic flag?', a:'Five'},
+    {cat:'Geography', q:'Which country has the most islands in the world?', a:'Sweden'},
+    {cat:'Science', q:'What is the only metal that is liquid at room temperature?', a:'Mercury'},
+    {cat:'History', q:'Which US president appears on the one-dollar bill?', a:'George Washington'},
+    {cat:'Food', q:'What is the primary ingredient in traditional hummus?', a:'Chickpeas'},
+    {cat:'General', q:'How many hearts does an earthworm have?', a:'Five (five pairs of aortic arches)'},
+    {cat:'Wordplay', q:'What is the only common word in English that ends in the letters "mt"?', a:'Dreamt'},
+    {cat:'Sports', q:'In golf, what is the term for one stroke under par?', a:'Birdie'},
+    {cat:'Science', q:'What planet is known for its prominent ring system?', a:'Saturn'},
+    {cat:'Geography', q:'What is the capital of New Zealand?', a:'Wellington'},
+    {cat:'History', q:'In what year did the Berlin Wall fall?', a:'1989'},
+    {cat:'General', q:'How many sides does a stop sign have?', a:'Eight'},
+    {cat:'Food', q:'What type of pastry is used to make a traditional croissant?', a:'Laminated dough (puff pastry style)'},
+    {cat:'Science', q:'What is the study of earthquakes called?', a:'Seismology'},
+    {cat:'Sports', q:'How many periods are in a standard hockey game?', a:'Three'},
+    {cat:'Geography', q:'Which African country was formerly known as Abyssinia?', a:'Ethiopia'},
+    {cat:'Wordplay', q:'What common English word contains three consecutive double letters?', a:'Bookkeeper'},
+    {cat:'History', q:'Who was the first woman to fly solo across the Atlantic?', a:'Amelia Earhart'},
+    {cat:'General', q:'What is the national sport of Japan?', a:'Sumo wrestling'}
   ];
   const round3Questions = [
     {cat:'Estimate', q:'How many keys does a standard piano have?', a:'88'},
@@ -231,7 +249,17 @@
     {cat:'Estimate', q:'How many teeth does an adult human have?', a:'32'},
     {cat:'Estimate', q:'How many hexagons are on a standard soccer ball?', a:'12 (plus 20 pentagons)'},
     {cat:'Estimate', q:'How many years did the Hundred Years\u2019 War actually last?', a:'116'},
-    {cat:'Estimate', q:'How many chromosomes does a human cell have?', a:'46'}
+    {cat:'Estimate', q:'How many chromosomes does a human cell have?', a:'46'},
+    {cat:'Estimate', q:'How many bottles of champagne are opened worldwide every second, on average?', a:'About 1.8'},
+    {cat:'Estimate', q:'How many Olympic gold medals has Michael Phelps won?', a:'23'},
+    {cat:'Estimate', q:'How many languages are officially recognized in India?', a:'22'},
+    {cat:'Estimate', q:'How many steps are there to the top of the Eiffel Tower?', a:'1,665'},
+    {cat:'Estimate', q:'How many U.S. states border the Pacific Ocean?', a:'5 (CA, OR, WA, AK, HI)'},
+    {cat:'Estimate', q:'How many bones does a newborn baby have?', a:'About 300'},
+    {cat:'Estimate', q:'How many moons does Jupiter have (currently confirmed)?', a:'95'},
+    {cat:'Estimate', q:'How many calories are in a standard Big Mac?', a:'About 550'},
+    {cat:'Estimate', q:'How many time zones does the USA have (including territories)?', a:'11'},
+    {cat:'Estimate', q:'How many dimples are on a standard golf ball?', a:'336'}
   ];
   const round4Questions = [
     {cat:'Movie', q:'🦁👑', a:'The Lion King'},
@@ -257,7 +285,17 @@
     {cat:'Movie', q:'🐀👨‍🍳', a:'Ratatouille'},
     {cat:'Movie', q:'🎪🦁🐘', a:'The Greatest Showman'},
     {cat:'Movie', q:'🏠👦🎄', a:'Home Alone'},
-    {cat:'Movie', q:'🦍🏙️', a:'King Kong'}
+    {cat:'Movie', q:'🦍🏙️', a:'King Kong'},
+    {cat:'Movie', q:'🧊👑🏰', a:'Frozen II'},
+    {cat:'Movie', q:'🐟🌊👑', a:'The Little Mermaid'},
+    {cat:'Movie', q:'🤡🎈🔴', a:'It'},
+    {cat:'Movie', q:'🚀👨‍🚀🌕', a:'Apollo 13'},
+    {cat:'Movie', q:'🧙‍♂️🌈🦁', a:'The Wizard of Oz'},
+    {cat:'Movie', q:'🐭🎩🪄', a:'Cinderella'},
+    {cat:'Movie', q:'🦋👽💚', a:'E.T. the Extra-Terrestrial'},
+    {cat:'Movie', q:'🍕🐢🥷', a:'Teenage Mutant Ninja Turtles'},
+    {cat:'Movie', q:'👑🦌❄️', a:'Bambi'},
+    {cat:'Movie', q:'🏴‍☠️💀🚢', a:'Pirates of the Caribbean'}
   ];
   const NUM_WORDS = {zero:0,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,eleven:11,twelve:12,thirteen:13,fourteen:14,fifteen:15,sixteen:16,seventeen:17,eighteen:18,nineteen:19,twenty:20,thirty:30,forty:40,fifty:50,sixty:60,seventy:70,eighty:80,ninety:90,hundred:100};
 
@@ -539,10 +577,10 @@
   }
 
   const ROUND_RULES = {
-    1: {name:'Rapid Fire', desc:'Trivia questions flash up on everyone\'s own device. Type your answer — fastest correct answer wins the points.'},
-    2: {name:'Bluff Call', desc:'Everyone secretly writes two true statements and one lie about themselves, then tries to guess everyone else\'s lie. Most correct guesses wins.'},
-    3: {name:'Prediction Wager', desc:'Guess a number and wager 1–5 points on it. Closest guess takes the whole pot from everyone who wagered.'},
-    4: {name:'Emoji Decode', desc:'An emoji clue appears — guess the movie it represents. Fastest correct answer wins the points.'},
+    1: {name:'Rapid Fire', desc:'Trivia questions flash up on everyone\'s own device. Fastest correct answer scores 5 points — everyone else who\'s also correct still gets 3.'},
+    2: {name:'Bluff Call', desc:'Everyone secretly writes two true statements and one lie about themselves, then tries to guess everyone else\'s lie. 3 points for every lie you correctly spot.'},
+    3: {name:'Prediction Wager', desc:'Guess a number and wager 1–5 points on it. Everyone\'s wager goes into one pot; the closest guess (or tied guesses, split evenly) takes it.'},
+    4: {name:'Emoji Decode', desc:'An emoji clue appears — guess the movie it represents. Everyone who gets it right scores 3 points.'},
   };
 
   function renderPresent(){
@@ -879,8 +917,6 @@
     const entries = Object.entries(room.submissions||{}).sort((a,b)=>a[1].submittedAt-b[1].submittedAt);
     if(!entries.length) return `<div class="muted" style="font-size:13px;">No submissions yet.</div>`;
     const isFreeText = room.round===1 || room.round===4;
-    const winPts = room.round===1 ? (room.active.points || 2) : 1;
-    const wrongPts = room.round===1 ? 1 : 0;
     return `<div class="sublist">` + entries.map(([pid,s])=>{
       const player = room.players[pid];
       if(!player) return '';
@@ -889,11 +925,25 @@
       else if(room.round===3) valDisplay = `Guess ${esc(s.value && s.value.guess)} · wagered ${esc(s.value && s.value.wager)}`;
       else valDisplay = esc(s.value);
       const graded = s.graded ? 'graded' : '';
-      const gradeBtns = (state.view==='host' && isFreeText && !s.graded) ? `
-        <span>
-          <button class="btn small teal" data-grade-correct="${pid}" data-pts="${winPts}">Correct +${winPts}</button>
-          <button class="btn small danger" data-grade-wrong="${pid}" data-pts="${wrongPts}">Wrong${wrongPts?' −'+wrongPts:''}</button>
-        </span>` : (s.graded ? `<span class="muted" style="font-size:12px;">${s.correct?'marked correct':'marked wrong'}</span>` : '');
+      let gradeBtns = '';
+      if(state.view==='host' && isFreeText && !s.graded){
+        if(room.round===1){
+          gradeBtns = `
+            <span>
+              <button class="btn small teal" data-grade-correct="${pid}" data-pts="5">Fastest +5</button>
+              <button class="btn small teal" data-grade-correct="${pid}" data-pts="3">Correct +3</button>
+              <button class="btn small danger" data-grade-wrong="${pid}" data-pts="0">Wrong</button>
+            </span>`;
+        } else {
+          gradeBtns = `
+            <span>
+              <button class="btn small teal" data-grade-correct="${pid}" data-pts="3">Correct +3</button>
+              <button class="btn small danger" data-grade-wrong="${pid}" data-pts="0">Wrong</button>
+            </span>`;
+        }
+      } else if(s.graded){
+        gradeBtns = `<span class="muted" style="font-size:12px;">${s.correct?'marked correct':'marked wrong'}</span>`;
+      }
       return `<div class="subrow ${graded}">
         <div><span class="who">${esc(player.nickname)}</span> <span class="val">— ${valDisplay}</span></div>
         ${gradeBtns}
@@ -901,19 +951,24 @@
     }).join('') + `</div>`;
   }
 
-  async function autoGradeRound(correctAnswer, pointsWin){
+  async function autoGradeRound(correctAnswer, pointsFirst, pointsOther){
     const room = state.room;
     const entries = Object.entries(room.submissions||{}).filter(([,s])=>!s.graded).sort((a,b)=>a[1].submittedAt-b[1].submittedAt);
     let winnerFound = false;
+    let anyCorrect = false;
     for(const [pid, s] of entries){
-      if(!winnerFound && answersMatch(s.value, correctAnswer)){
-        await hostAction('grade-submission', {playerId:pid, correct:true, points:pointsWin});
-        winnerFound = true;
+      const isCorrect = answersMatch(s.value, correctAnswer);
+      if(isCorrect && !winnerFound){
+        await hostAction('grade-submission', {playerId:pid, correct:true, points:pointsFirst});
+        winnerFound = true; anyCorrect = true;
+      } else if(isCorrect){
+        await hostAction('grade-submission', {playerId:pid, correct:true, points:pointsOther});
+        anyCorrect = true;
       } else {
         await hostAction('grade-submission', {playerId:pid, correct:false, points:0});
       }
     }
-    toast(winnerFound ? 'Points auto-assigned.' : 'No matching answer found — grade manually below.');
+    toast(anyCorrect ? 'Points auto-assigned.' : 'No matching answer found — grade manually below.');
   }
 
   async function hostAction(sub, payload){
@@ -1254,11 +1309,12 @@
       const upNext = nextUnusedIndex(bank, used);
       const allUsed = upNext===null;
       const planTarget = room.plan && room.plan[String(r)] && room.plan[String(r)].questions;
-      const pointsKey = r===1 ? 'round1Points' : 'round4Points';
+      const scoreLine = r===1 ? 'Fastest correct: 5 pts · Correct: 3 pts · Wrong: 0' : 'Correct: 3 pts · Wrong: 0';
       panel.innerHTML = `
         <h2>${ROUND_NAMES[r]}</h2>
-        <div class="muted" style="font-size:13.5px;margin-bottom:6px;">${r===1 ? 'Pick a question, let guests submit answers, then grade each submission.' : 'Guess the movie from the emoji clue — fastest correct answer wins the points.'}</div>
-        <div class="muted" style="font-size:12px;margin-bottom:12px;">${used.length}${planTarget?' of '+planTarget+' planned':' of '+bank.length+' used'}${allUsed?' — you\'ve used the whole bank':''}</div>
+        <div class="muted" style="font-size:13.5px;margin-bottom:6px;">${r===1 ? 'Pick a question, let guests submit answers, then grade each submission.' : 'Guess the movie from the emoji clue — everyone who gets it right scores.'}</div>
+        <div class="muted" style="font-size:12px;margin-bottom:2px;">${used.length}${planTarget?' of '+planTarget+' planned':' of '+bank.length+' used'}${allUsed?' — you\'ve used the whole bank':''}</div>
+        <div class="muted" style="font-size:12px;margin-bottom:12px;">${scoreLine}</div>
         <div id="pendingBanner">${pendingBannerHtml(room)}</div>
         <div class="row2" style="margin-bottom:10px;">
           <div>
@@ -1266,10 +1322,6 @@
             <select id="qSelect" style="width:100%;padding:10px;background:var(--panel-2);border:1px solid var(--line);color:var(--text);border-radius:6px;">
               ${bank.map((q,i)=>`<option value="${i}" ${(idx===i || (idx==null && i===upNext)) ? 'selected':''}>${i+1}. ${used.includes(i)?'✓ ':''}${esc(r===1?q.q.slice(0,40)+(q.q.length>40?'…':''):q.q+' — '+q.a)}</option>`).join('')}
             </select>
-          </div>
-          <div style="width:90px;">
-            <label>Points</label>
-            <input type="number" min="1" max="50" id="pointsInput" value="${draft[pointsKey] || 2}">
           </div>
           <div style="display:flex;align-items:flex-end;">
             <button class="btn primary" id="btnOpenQ">Open this question</button>
@@ -1282,7 +1334,7 @@
         ${current ? `
           <div class="qcat">${esc(current.cat)}</div>
           ${r===1 ? `<div class="qtext-lg">${esc(current.q)}</div>` : `<div class="emoji-display">${current.q}</div>`}
-          <div style="margin:10px 0;">Status: <b>${room.active.kind}</b> · Worth <b>${room.active.points || 2} pt${(room.active.points||2)===1?'':'s'}</b></div>
+          <div style="margin:10px 0;">Status: <b>${room.active.kind}</b></div>
           <div style="display:flex;gap:8px;margin-bottom:16px;">
             <button class="btn small" id="btnCloseSub">Close submissions</button>
             <button class="btn small teal" id="btnRevealAns">Reveal & auto-grade</button>
@@ -1292,22 +1344,20 @@
         <h3 style="font-size:14.5px;margin:22px 0 4px;">Submissions</h3>
         <div id="liveSubs">${submissionsHtml(room)}</div>
       `;
-      const pointsInput = document.getElementById('pointsInput');
-      pointsInput.oninput = ()=> draft[pointsKey] = pointsInput.value;
       const openNext = document.getElementById('btnOpenNext');
       if(openNext) openNext.onclick = ()=>{
         if(upNext!=null){
           document.getElementById('qSelect').value = String(upNext);
-          hostAction('open-question', {questionIndex: upNext, points: parseInt(pointsInput.value,10)||2});
+          hostAction('open-question', {questionIndex: upNext});
         }
       };
-      document.getElementById('btnOpenQ').onclick = ()=> hostAction('open-question', {questionIndex: parseInt(document.getElementById('qSelect').value,10), points: parseInt(pointsInput.value,10)||2});
+      document.getElementById('btnOpenQ').onclick = ()=> hostAction('open-question', {questionIndex: parseInt(document.getElementById('qSelect').value,10)});
       document.getElementById('btnResetUsed').onclick = ()=>{ if(confirm('Reset the used-question list for this round?')) hostAction('reset-used', {round:r}); };
       const cs = document.getElementById('btnCloseSub'); if(cs) cs.onclick = ()=> hostAction('close-submissions');
       const rv = document.getElementById('btnRevealAns');
       if(rv) rv.onclick = async ()=>{
         await hostAction('mark-revealed');
-        await autoGradeRound(current.a, room.active.points || 2);
+        await autoGradeRound(current.a, 5, r===1?3:3);
       };
       wireGradeButtons();
     }
@@ -1391,7 +1441,7 @@
       const planTarget3 = room.plan && room.plan['3'] && room.plan['3'].questions;
       panel.innerHTML = `
         <h2>Prediction Wager</h2>
-        <div class="muted" style="font-size:13.5px;margin-bottom:6px;">Open a question — guests submit a numeric guess plus a 1–5 point wager. Closest guess takes the whole pot — everyone else's wager goes to the winner.</div>
+        <div class="muted" style="font-size:13.5px;margin-bottom:6px;">Open a question — guests submit a numeric guess plus a 1–5 point wager. Everyone's wager goes into one pot — closest guess takes it, ties split it evenly.</div>
         <div class="muted" style="font-size:12px;margin-bottom:12px;">${used.length}${planTarget3?' of '+planTarget3+' planned':' of '+round3Questions.length+' used'}${allUsed3?' — you\'ve used the whole bank':''}</div>
         <div id="pendingBanner">${pendingBannerHtml(room)}</div>
         <div class="row2" style="margin-bottom:10px;">
@@ -1423,7 +1473,7 @@
               <button class="btn small teal" id="btnRevealWager">Reveal & score</button>
             </div>
           </div>
-          ${room.active.kind==='revealed' ? `<div class="qanswer">Actual value: ${esc(room.active.actualValue)}</div>` : ''}
+          ${room.active.kind==='revealed' ? `<div class="qanswer">Actual value: ${esc(room.active.actualValue)}${room.active.wagerTie ? ' — tied for closest! Pot split between the winners.' : ''}</div>` : ''}
         ` : `<div class="muted" style="font-size:13.5px;">Pick a question above and click "Open this question."</div>`}
         <h3 style="font-size:14.5px;margin:22px 0 4px;">Guesses</h3>
         <div id="liveSubs">${submissionsHtml(room)}</div>
@@ -1507,7 +1557,7 @@
       if(room.active.kind==='open' && !mySub){
         panel.innerHTML = `
           <h2>${ROUND_NAMES[room.round]}</h2>
-          <div class="qcat">${esc(current.cat)} · Worth ${room.active.points||2} pt${(room.active.points||2)===1?'':'s'}</div>
+          <div class="qcat">${esc(current.cat)} · ${room.round===1 ? 'Fastest correct: 5 pts · Correct: 3 pts' : 'Correct: 3 pts'}</div>
           ${room.round===1 ? `<div class="qtext-lg">${esc(current.q)}</div>` : `<div class="emoji-display">${current.q}</div>`}
           <div class="field" style="margin-top:16px;">
             <label>Your answer</label>
@@ -1653,7 +1703,7 @@
           <h2>Prediction Wager</h2>
           <div class="qcat">${esc(current.cat)}</div>
           <div class="qtext-lg">${esc(current.q)}</div>
-          <div class="muted" style="font-size:12px;margin-top:8px;">Closest guess takes the whole pot — everyone else's wager goes to the winner.</div>
+          <div class="muted" style="font-size:12px;margin-top:8px;">Everyone's wager goes into one pot — closest guess takes it, ties split it evenly.</div>
           <div class="row2" style="margin-top:16px;">
             <div class="field">
               <label>Your guess</label>
@@ -1685,7 +1735,7 @@
           <div class="qtext-lg">${esc(current.q)}</div>
           <div class="waiting" style="padding:30px 10px;">
             ${mySub ? `<div>You guessed <b>${esc(mySub.value.guess)}</b>, wagered <b>${esc(mySub.value.wager)}</b></div>` : `<div class="muted">Submissions are closed.</div>`}
-            ${room.active.kind==='revealed' ? `<div class="qanswer">Actual value: ${esc(room.active.actualValue)}</div>` : `<div class="muted" style="margin-top:6px;">Waiting on the host…</div>`}
+            ${room.active.kind==='revealed' ? `<div class="qanswer">Actual value: ${esc(room.active.actualValue)}${room.active.wagerTie ? ' — tied for closest! Pot split between the winners.' : ''}</div>` : `<div class="muted" style="margin-top:6px;">Waiting on the host…</div>`}
           </div>
         `;
       }
