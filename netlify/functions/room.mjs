@@ -269,7 +269,7 @@ export default async (req, context) => {
           for (const targetId of Object.keys(myGuesses)) {
             const entry = room.bluff.entries[targetId];
             if (entry && myGuesses[targetId] === entry.lieIndex) {
-              room.players[guesserId].score += 1;
+              room.players[guesserId].score += 3;
             }
           }
         }
@@ -292,29 +292,31 @@ export default async (req, context) => {
       case "reveal-wager": {
         room.active.kind = "revealed";
         room.active.actualValue = payload.actualValue;
-        let bestPid = null;
         let bestDiff = Infinity;
         for (const pid of Object.keys(room.submissions)) {
           const sVal = room.submissions[pid];
           const diff = Math.abs((sVal.value && sVal.value.guess != null ? sVal.value.guess : 0) - payload.actualValue);
-          if (diff < bestDiff) {
-            bestDiff = diff;
-            bestPid = pid;
-          }
+          if (diff < bestDiff) bestDiff = diff;
         }
+        const winners = Object.keys(room.submissions).filter((pid) => {
+          const sVal = room.submissions[pid];
+          const diff = Math.abs((sVal.value && sVal.value.guess != null ? sVal.value.guess : 0) - payload.actualValue);
+          return diff === bestDiff;
+        });
         let pot = 0;
         for (const pid of Object.keys(room.submissions)) {
-          if (pid === bestPid) continue;
           if (!room.players[pid]) continue;
           const sVal = room.submissions[pid];
           const wager = (sVal.value && sVal.value.wager) || 1;
           room.players[pid].score -= wager;
           pot += wager;
         }
-        if (bestPid && room.players[bestPid]) {
-          room.players[bestPid].score += pot;
+        const share = winners.length ? Math.floor(pot / winners.length) : 0;
+        for (const pid of winners) {
+          if (room.players[pid]) room.players[pid].score += share;
         }
-        addLog(room, "Wager revealed: " + payload.actualValue);
+        room.active.wagerTie = winners.length > 1;
+        addLog(room, "Wager revealed: " + payload.actualValue + (winners.length > 1 ? " — tied for closest, pot split " + winners.length + " ways" : ""));
         break;
       }
 
